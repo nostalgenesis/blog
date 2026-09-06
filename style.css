@@ -162,7 +162,7 @@ nav a {
 }
 
 .article-list li:not(:last-child)::after {
-    content: "❦❦❦";
+    content: "❦ ❦ ❦ ❦ ❦ ❦ ❦";
     display: block;
     text-align: center;
     color: #999999;

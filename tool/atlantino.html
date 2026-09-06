@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlantino · Una mappa aperta e personalizzabile per aspiranti guide turistiche · Daniel Di Primo</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="../script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="site-title">
+                <a href="../index.html">
+                    <span class="title-line site-title-accent">Il blog di</span>
+                    <span class="title-line">Daniel</span>
+                    <span class="title-line">Di Primo</span>
+
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">(Home)</a></li>
+                    <li><a href="../lab.html">{Lab}</a></li>
+                    <li><a href="../testi.html">[Testi]</a></li>
+                    <li><a href="../chisono.html">/Chi sono/</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="site-tagline">Filologia, Digital Humanities ed eresie varie</p>
+    </header>
+
+    <main class="article-content">
+        <article>
+            <header class="article-header">
+                <p class="article-date">6 settembre 2026</p>
+                <h1>Atlantino</h1>
+                <p class="subtitle">Una mappa aperta e personalizzabile per aspiranti guide turistiche.</p>
+            </header>
+
+            <div class="entry-content">
+                <p>
+                    L'<em><b>Atlantino</b></em> è uno strumento pensato per lo studio, la memorizzazione e il ripasso <a
+                        href="https://portale.inpa.gov.it/api/media/d479ec81-a12a-4357-b574-efdea8763846">dei siti e dei
+                        luoghi d'Italia</a> previsti per <a
+                        href="https://www.inpa.gov.it/bandi-e-avvisi/dettaglio-bando-avviso/?concorso_id=4eed076c847741c493ad9702ff78f6d6">l'esame
+                        di conseguimento dell’abilitazione all’esercizio della
+                        professione di guida turistica (2026)</a>. Per affiancare allo studio teorico anche uno
+                    cartografico, ho
+                    sviluppato questa web app come esperimento di vibe-coding con Claude Sonnet 5 (Anthropic), pensando
+                    a uno spazio di lavoro in cui visualizzare e personalizzare la propria mappa. È uno strumento aperto
+                    e libero che spero possa essere utile per i colleghi esaminandi e per chiunque voglia organizzare il
+                    proprio studio del territorio.
+                </p>
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>Come usarlo?</h2>
+                <p>
+                    <b> <u>Non</u> si tratta di una mappa pronta per l'uso</b>, bensì di <b>uno strumento con cui creare
+                        agilmente la tua
+                        mappa personale</b> nella maniera che più si confà al tuo metodo e stile di studio,
+                    memorizzazione e
+                    ripasso. Si basa tutto sul principio della visualizzazione:
+                <ol>
+                    <li>sulla mappa piazzerai <b>i tuoi segnaposto</b>, a cui assegnerai nomi, colori ed eventuali note
+                        di
+                        testo;</li>
+                    <li>in qualsiasi momento potrai cambiare visuale tra <b>cartina parlante, immagine satellitare e
+                            cartina muta.</b></li>
+                </ol>
+                Puoi usare l'<em><b>Atlantino</b></em> <a href="https://nostalgenesis.github.io/atlantino/">cliccando
+                    qui</a> oppure servendoti dei <a href="https://github.com/nostalgenesis/atlantino">file presenti
+                    nella repository pubblica sul mio profilo GitHub</a>.
+                </p>
+
+                <img src="../assets/immagini/26/09/basilica.png" alt="">
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>Segnaposto</h2>
+                <p>
+                <p>I segnaposto sono pallini di diversi colori con cui segnare i punti sulla mappa. Cliccando su un
+                    punto della mappa si aprirà una finestra che permette di personalizzare il segnaposto, dandogli un
+                    nome, un colore e inserendo dentro di esso eventuali note. Nomi, colori e note sono modificabili
+                    <b>in qualsiasi momento</b> anche dopo la loro creazione.
+                </p>
+
+                <p>
+                    <b>Tasto <em>MODALITÀ RIPASSO</em></b>: scorrendo il cursore sopra i segnaposto, comparirà il nome
+                    che gli avrai assegnato. Questa funzione è disattivabile e riattivabile con il tasto <b>MODALITÀ
+                    RIPASSO</b>.
+                </p>
+
+                <p>
+                    <b>Come funzionano i segnaposto:</b> L'<em><b>Atlantino</b></em> organizza i punti geografici su due
+                    livelli:
+                </p>
+
+                <p>
+                <ul>
+                    <li><b>Principali... (i "siti"):</b> Rappresentano i <b>contenitori</b>, cioè le <em>macro-aree</em>
+                        o <em>macro-categorie</em>
+                        (e.g. <em>la città di Roma</em>; <em>la categoria "siti archeologici della Sicilia"</em>). Hanno
+                        un colore identificativo.</li>
+                    <li><b>... e secondari (i "punti di interesse"):</b> Sono i <b>singoli punti</b> specifici legati a
+                        un sito principale (e.g. <em>Ponte Vecchio</em> nel contesto di Firenze; il <em>teatro greco di
+                            Siracusa</em> all'interno del Parco Archeologico della Neapolis). Ereditano il colore del 
+                            loro sito "padre", di una tonalità più tenue ma riconoscibile.</li>
+                </ul>
+                </p>
+                <img src="../assets/immagini/26/09/nuovosito.png" alt="">
+                <p>
+                    <b>Tasto <em>ELEMENTI SECONDARI</em></b>Puoi mostrare o nascondere interi siti dal menù laterale, oppure nascondere tutti quelli secondari
+                    (con il tasto <b>SEGNAPOSTO SECONDARI</b>) per testare la tua memoria.
+                </p>
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>Visuale</h2>
+                <p>Puoi visualizzare tre tipi di mappa, cambiando dall'una all'altra in qualsiasi momento coi tasti in
+                    alto a destra senza spostamenti improvvisi:
+                <ul>
+                    <li><b>cartina parlante di OpenStreetMap</b>, con toponomastica, strade, confini di stati e regioni.
+                        La lingua che
+                        si legge è quella ufficiale dello stato osservato, ma sono rispettati bilinguismi e certi nomi
+                        in lingua
+                        o dialetto locale. Consiglio, per esperienza personale, di servirsene nella fase di assegnazione
+                        dei
+                        segnaposto, possibilmente congiuntamente a un'altra mappa digitale o cartacea.</li>
+                    <li><b>immagine satellitare</b>;</li>
+                    <li><b>cartina muta</b>.</li>
+                </ul>
+                </p>
+
+                <img src="../assets/immagini/26/09/cardomaximus.png" alt="">
+                <p>
+                    La visualizzazione dinamica e l'interattività delle mappe sono rese possibili dall'integrazione
+                    della libreria JavaScript Leaflet.
+                </p>
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>Filosofia del progetto e contributi</h2>
+                <p>
+                    Non ho voluto creare una mappa e basta, ma una mappa personalizzabile da ciascuno in base alle
+                    proprie necessità per il proprio studio, giocando con pochi elementi minimi:
+                <ul>
+                    <li>la <b>gerarchia</b> tra segnaposto principali e secondari;</li>
+                    <li>la possibilità di includere le proprie <b>note di testo</b>;</li>
+                    <li>la <b>condivisibilità</b> dei file delle mappe.</li>
+                </ul>
+                L'<em><b>Atlantino</b></em> è pensato appositamente come strumento di studio: essendo lo studio qualcosa
+                di
+                altamente personale (e poco prevedibile), immagino che qualcuno troverà modalità d'utilizzo molto
+                diverse da quelle da me immaginate e preventivate. Per questo motivo il progetto è open source e
+                ogni commento, feedback o contributo (sia come miglioramento che come suggerimento) sarà enormemente
+                gradito e ben accetto.
+                </p>
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>IMPORTANTE: uso dei dati</h2>
+                <p>
+
+                    I dati vengono salvati localmente nel browser. <b>Se viene cancellata la cache e i dati non sono
+                        stati
+                        scaricati, essi andranno perduti.</b> Puoi esportare la tua mappa come JSON e reimportarla in un
+                    secondo
+                    momento, su un altro browser. I file JSON esportati possono essere inviati anche ad altre persone.
+                    <b>L'importazione di mappe o file JSON creati da terzi avviene sotto la diretta responsabilità
+                        dell'utente.</b>
+                </p>
+
+                <div class="article-divider">❦❦❦</div>
+
+                <h2>Licenza</h2>
+                <p>
+                    Il codice è distribuito con licenza MIT.
+                </p>
+
+            </div>
+
+            <div class="article-divider">❦❦❦</div>
+
+        </article>
+
+    </main>
+
+    <footer class="mini-footer">
+        <div class="footer-info">
+            <p class="footer-site-name">Daniel Di Primo</p>
+
+        </div>
+
+        <div class="footer-social">
+            <a href="https://youtube.com/@nostalgenesis" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+                    <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/daniel-g-diprimo" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+                    <path
+                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5Z" />
+                </svg>
+            </a>
+
+            <a href="https://github.com/nostalgenesis" aria-label="GitHub" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+                    <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55A10.53 10.53 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                </svg>
+            </a>
+
+            <a href="https://instagram.com/nostalgenesis" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true" width="20" height="20">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <div class="text-size-toggle floating-text-size" role="group" aria-label="Ridimensiona il testo">
+        <button type="button" class="font-decrease-btn" data-font-action="decrease"
+            aria-label="Rimpicciolisci il testo"><b>A−</b></button>
+        <button type="button" class="font-reset-btn" data-font-action="reset"
+            aria-label="Dimensione del testo predefinita">A</button>
+        <button type="button" class="font-increase-btn" data-font-action="increase"
+            aria-label="Ingrandisci il testo"><b>A+</b></button>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,610 @@
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../assets/fonts/LibreBaskerville-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../assets/fonts/LibreBaskerville-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../assets/fonts/LibreBaskerville-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GFS Didot';
+    src: url('../assets/fonts/GFSDidot-Regular.woff2') format('woff2'); 
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Variabile globale per lo zoom testo: viene letta/scritta da font-size.js */
+html {
+    --font-scale: 1;
+    font-size: calc(16px * var(--font-scale));
+    transition: font-size 0.15s ease;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #fcfbf9;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-size: 1.125rem;
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #555555;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+ 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+ 
+.site-title a {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+ 
+.title-line {
+    display: block;
+}
+ 
+.site-title-accent {
+    font-style: italic;
+    font-weight: 400;
+    color: #777777;
+    font-size: 0.85em;
+}
+ 
+.site-tagline {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #777777;
+    letter-spacing: 0.02em;
+}
+ 
+.site-tagline::before,
+.site-tagline::after {
+    content: "❦";
+    display: inline-block;
+    margin: 0 0.6rem;
+    color: #bbbbbb;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.lang-switch {
+    font-size: 0.85rem;
+    margin-left: 1rem;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-list li {
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 1.125rem;
+}
+
+.article-list li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article-list .date {
+    font-size: 0.85rem;
+    color: #777777;
+    margin-right: 1rem;
+    font-variant-numeric: tabular-nums; 
+}
+
+.article-list li:not(:last-child)::after {
+    content: "❦❦❦";
+    display: block;
+    text-align: center;
+    color: #999999;
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+}
+
+/* Griglia Lab: card "fluttuanti", niente bordo/sfondo a riposo,
+   rivelati solo al passaggio del mouse per segnalare l'area cliccabile */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lab-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 14px;
+    padding: 0.75rem;
+    margin: -0.75rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.lab-card:hover,
+.lab-card:focus-visible {
+    background-color: rgba(26, 26, 26, 0.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+.lab-card-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+    background-color: #eeeeee;
+}
+
+.lab-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lab-card-title {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.lab-card:hover .lab-card-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.lab-card-subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666666;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* CHi sono */
+
+.about-content .contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.about-content .contact-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.about-content .contact-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content .contact-section li {
+    margin-bottom: 0.6rem;
+}
+
+nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Stile articolo */
+
+.article-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 0;
+    border-bottom: none; 
+    display: block;
+}
+
+.article-date {
+    font-size: 0.85rem;
+    color: #777777;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.article-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 0.8rem 0;
+}
+
+.article-header .subtitle {
+    font-size: 1.15rem;
+    color: #555555;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.entry-content p {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+blockquote {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 2px solid #1a1a1a;
+    font-style: italic;
+    color: #333333;
+}
+
+.entry-content figure {
+    display: table;
+    margin: 2rem auto;
+}
+
+.entry-content figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666666;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.entry-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Da desktop in su: dimensione naturale dell'immagine, centrata,
+   ma senza mai superare la larghezza del box di testo */
+@media (min-width: 601px) {
+    .entry-content img {
+        width: auto;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.footnote-ref {
+    text-decoration: none;
+    font-weight: bold;
+    color: #777777;
+    padding: 0 2px;
+}
+
+.footnote-ref:hover {
+    color: #1a1a1a;
+}
+
+
+.article-divider {
+    text-align: center;
+    color: #999999;
+    font-size: 0.85rem;
+    margin: 3rem 0;
+}
+
+.footnotes {
+    font-size: 0.95rem;
+    color: #444444;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1.5rem;
+}
+
+.footnotes h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.footnotes ol {
+    padding-left: 1.2rem;
+}
+
+.footnotes li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.footnote-back {
+    text-decoration: none;
+    color: #888888;
+    margin-left: 0.3rem;
+}
+
+.footnote-back:hover {
+    color: #1a1a1a;
+}
+
+/* Pulsanti zoom testo (A- / A / A+) */
+.text-size-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.text-size-toggle button {
+    font-family: 'Libre Baskerville', serif;
+    border: 1px solid #1a1a1a;
+    background: transparent;
+    color: #1a1a1a;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.text-size-toggle button:hover,
+.text-size-toggle button:focus-visible {
+    background: #1a1a1a;
+    color: #fcfbf9;
+    outline: none;
+}
+
+.text-size-toggle .font-reset-btn {
+    font-size: 0.7rem;
+}
+
+/* Widget flottante per lo zoom testo: sempre visibile, desktop e mobile */
+.floating-text-size {
+    display: flex;
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background: #fcfbf9;
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 0.4rem;
+    gap: 0.35rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+/* Mini footer */
+.mini-footer {
+    margin-top: 4rem;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.85rem;
+    color: #777777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.mini-footer .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mini-footer .footer-site-name {
+    margin: 0;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+.mini-footer .footer-license {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mini-footer .footer-license a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #777777;
+    text-decoration: none;
+}
+
+.mini-footer .footer-license a:hover {
+    color: #1a1a1a;
+}
+
+.mini-footer .footer-license svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.mini-footer .footer-social {
+    display: flex;
+    gap: 0.9rem;
+    flex-shrink: 0;
+}
+
+.mini-footer .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777777;
+    text-decoration: none;
+}
+
+.mini-footer .footer-social a:hover {
+    color: #1a1a1a;
+}
+
+.mini-footer .footer-social svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Lingue classiche */
+[lang="la"] {
+    font-style: italic;
+}
+
+[lang="grc"] {
+    font-family: "GFS Didot", "Palatino Linotype", "Palatino", "Georgia", serif;
+    font-style: normal; 
+    letter-spacing: 0.02em; 
+}
+
+blockquote[lang="grc"],
+blockquote[lang="la"] {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* errore 404  */
+.not-found-message {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.not-found-message h1 {
+    font-size: 1.2rem;
+    font-weight: 400; 
+    margin-bottom: 1.5rem;
+}
+
+.translation {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: #444444;
+}
+
+/* Per cellulari */
+
+@media (max-width: 600px) {
+    
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .site-title a {
+        font-size: 1.35rem;
+    }
+
+    
+    .site-tagline {
+        font-size: 0.85rem;
+    }
+ 
+    .site-tagline::before,
+    .site-tagline::after {
+        margin: 0 0.4rem;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    .lang-switch {
+        font-size: 1rem;
+    }
+
+    .article-list li {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+
+    .article-list .date {
+        font-size: 0.95rem;
+    }
+
+    .article-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .article-header .subtitle {
+        font-size: 1.05rem;
+    }
+
+    .lab-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem 1rem;
+    }
+
+}

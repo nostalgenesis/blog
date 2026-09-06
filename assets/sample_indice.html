@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab · Daniel Di Primo</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>[Title] · Daniel Di Primo</title>
+    <link rel="alternate" hreflang="en" href="en/index.html" />
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
 </head>
 <body>
     <header>
         <div class="header-top">
             <div class="site-title">
-                <a href="index.html">
+                <a href="../index.html">
                     <span class="title-line site-title-accent">Il blog di</span>
                     <span class="title-line">Daniel</span>
                     <span class="title-line">Di Primo</span>
+                    
                 </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">(Home)</a></li>
-                    <li><a href="lab.html" class="active">{Lab}</a></li>
-                    <li><a href="testi.html">[Testi]</a></li>
-                    <li><a href="chisono.html">/Chi sono/</a></li>
+                    <li><a href="../index.html">(Home)</a></li>
+                    <li><a href="../lab.html">{Lab}</a></li>
+                    <li><a href="../testi.html">[Testi]</a></li>
+                    <li><a href="../chisono.html">/Chi sono/</a></li>
                     <li>
-                        <span class="lang-switch"><strong>IT</strong> | <a href="en/lab.html">EN</a></span>
+                        <span class="lang-switch"><strong>IT</strong> | <a href="../en/index.html">EN</a></span>
                     </li>
                 </ul>
             </nav>
@@ -33,17 +35,23 @@
     </header>
 
     <main>
-        <div class="lab-grid">
+        <ul class="article-list">
+            <li>
+                <span class="date">27/08/26</span>
+                <a href="..\articoli\mondocane.html">titolo</a>
+            </li>
 
-            <a class="lab-card" href="tool/atlantino.html">
-                <div class="lab-card-image">
-                    <img src="assets/immagini/26/09/thumbnail_atlantino.png" alt="">
-                </div>
-                <h3 class="lab-card-title">Atlantino</h3>
-                <p class="lab-card-subtitle">Una mappa aperta e personalizzabile per aspiranti guide turistiche</p>
-            </a>
+            <li>
+                <span class="date">25/07/26</span>
+                <a href="articoli/tecnologie-digitali-e-filologia.html">titolo</a>
+            </li>
+            
+            <li>
+                <span class="date">25/07/26</span>
+                <a href="articoli/tecnologie-digitali-e-filologia.html">titolo</a>
+            </li>
 
-        </div>
+        </ul> 
     </main>
 
    <footer class="mini-footer">
@@ -88,7 +96,7 @@
         </a>
     </div>
     </footer>
-
+ 
     <div class="text-size-toggle floating-text-size" role="group" aria-label="Ridimensiona il testo">
         <button type="button" class="font-decrease-btn" data-font-action="decrease" aria-label="Rimpicciolisci il testo"><b>A−</b></button>
         <button type="button" class="font-reset-btn" data-font-action="reset" aria-label="Dimensione del testo predefinita">A</button>
